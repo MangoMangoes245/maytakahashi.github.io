@@ -7,14 +7,14 @@
 /* body styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #968e82;
     color: #333;
     line-height: 1.6;
 }
 
 /* header styling */
 header {
-    background-color: #ff6666;
+    background-color: #ff94ad;
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -27,7 +27,7 @@ header nav ul {
 }
 
 header nav ul li {
-    margin: 0 1rem;
+    margin: 0 2rem;
 }
 
 header nav ul li a {
@@ -36,17 +36,12 @@ header nav ul li a {
     font-weight: bold;
 }
 
-header h1 {
-    margin-top: 1rem;
-    font-size: 3rem;
-}
-
 /* hero section styling */
 .hero {
     background-image: url('/static/img/origami-hero.jpg');
     background-size: cover;
     background-position: center;
-    padding: 3rem;
+    padding: 14rem;
     text-align: center;
     color: white;
 }
@@ -58,13 +53,14 @@ header h1 {
 
 .hero p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .cta-button {
     background-color: #fff;
-    color: #ff6666;
+    color: #ff94ad;
     padding: 1rem 2rem;
+    margin: 1rem;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
@@ -87,6 +83,6 @@ footer {
 }
 
 footer a {
-    color: #ff6666;
+    color: #ff94ad;
     text-decoration: none;
 }
