@@ -3,4 +3,4 @@ services:
     name: origami-club
     env: python
     buildCommand: ""
-    startCommand: gunicorn src.main:app
+    startCommand: gunicorn src.app:app
