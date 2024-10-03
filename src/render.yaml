@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: origami-club
-    env: python
-    buildCommand: ""
-    startCommand: gunicorn src.app:app
