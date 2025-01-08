@@ -3,7 +3,7 @@ import "../assets/css/events.css";
 
 const Events = () => (
   <main>
-    <h1>Weekly Workshops</h1>
+    <h1>Weekly Workshops 2024-2025</h1>
     <section className="gallery">
       {Array.from({ length: 24 }, (_, i) => (
         <img

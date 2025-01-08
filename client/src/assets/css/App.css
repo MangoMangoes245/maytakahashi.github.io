@@ -2,11 +2,16 @@
   font-family: 'k2d';
   src: url('../fonts/K2D/K2D-Bold.ttf');
 }
+
 @font-face {
   font-family: 'mochiyPop';
   src: url('../fonts\Mochiy_Pop_P_One\MochiyPopPOne-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'jersey25';
+  src: url('../fonts/Jersey_25/Jersey25-Regular.ttf');
+}
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +37,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed; 
+  
 
 }
 
@@ -53,7 +59,8 @@ header nav ul {
 }
 
 header nav ul li {
-  margin: 0 2rem;
+  font-size: 2vw;
+  margin: 0 1rem;
 }
 
 header nav ul li a {
@@ -79,17 +86,17 @@ header nav ul li a {
   padding-left: 2rem; 
   text-align: left;
   color: white;
-  text-shadow: 2px 2px 5px grey;
+  text-shadow: 1px 3px 2px grey;
 }
 .hero h2 {
   
   font-size: 5vw;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   
 }
 .hero h3{
   font-size: 3vw;
-  
+  margin-bottom: 5rem;
 }
 .hero img {
   height: 10%;
@@ -97,6 +104,23 @@ header nav ul li a {
   left:0;
   top:0;
   padding: 1vw;
+}
+
+.mission img {
+  height: 10%;
+  position: absolute;
+  left:0;
+  top:0;
+  padding: 1vw;
+}
+
+.mission h1{
+  text-align: center;
+  font-family: 'jersey25';
+  text-shadow: 2px 2px 5px grey;
+  font-size: 4vw;
+  padding: 4rem;
+
 }
 
 .gallery {
@@ -108,7 +132,8 @@ header nav ul li a {
 
 .gallery img {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 40%;
+  box-shadow: 2px 2px 5px 2px whitesmoke;
   transition: transform 0.3s ease;
 }
 
@@ -119,6 +144,8 @@ header nav ul li a {
 main h1 {
   text-align: center;
   margin: 2rem 0;
-  font-size: 2rem;
+  font-size: 3rem;
+  font-family: jersey25;
+  text-shadow: 2px 2px 5px grey;
   color: #ffffff;
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import "../assets/css/contact.css";
 
 const Contact = () => (
   <main>
