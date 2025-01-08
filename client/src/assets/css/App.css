@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'k2d';
+  src: url('../fonts/K2D/K2D-Bold.ttf');
+}
+@font-face {
+  font-family: 'mochiyPop';
+  src: url('../fonts\Mochiy_Pop_P_One\MochiyPopPOne-Regular.ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,9 +26,13 @@ html, body {
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #968e82;
   color: #333;
   line-height: 1.6;
+  background-image: url('../images/background.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+
 }
 
 main {
@@ -29,8 +42,6 @@ main {
 }
 
 header {
-  background-color: #ff94ad;
-  color: white;
   text-align: center;
   padding: 1rem 0;
 }
@@ -38,7 +49,7 @@ header {
 header nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: right;
 }
 
 header nav ul li {
@@ -46,58 +57,45 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: normal;
+  font-family: 'k2d';
+  background-color: #ff6565;
+  color: transparent;
+  text-shadow: 0px 2px 3px rgba(231, 201, 201, 0.5);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+
 }
 
 .hero {
-  background-image: url('/static/img/origami-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 14rem;
-  text-align: center;
+  font-family: 'mochiyPop';
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: flex-start;
+  min-height: 90vh; 
+  padding-left: 2rem; 
+  text-align: left;
   color: white;
 }
-
 .hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
+  
+  font-size: 5vw;
   margin-bottom: 3rem;
+  
 }
-
-.cta-button {
-  background-color: #fff;
-  color: #ff94ad;
-  padding: 1rem 2rem;
-  margin: 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+.hero h3{
+  font-size: 3vw;
+  
 }
-
-.cta-button:hover {
-  background-color: #ffcccc;
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  width: 100%;
-  padding: 1rem 0;
-  margin-top: auto;
-}
-
-footer a {
-  color: #ff94ad;
-  text-decoration: none;
-  font-weight: bold;
+.hero img {
+  height: 10%;
+  position: absolute;
+  left:0;
+  top:0;
+  padding: 1vw;
 }
 
 .gallery {

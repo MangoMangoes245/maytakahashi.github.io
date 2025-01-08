@@ -4,10 +4,9 @@ import "../assets/css/home.css";
 const Home = () => (
   <main>
     <section className="hero">
+      <img src="/src/assets/images/logo.PNG" alt="Origami" />
       <h2>RU Origami Club</h2>
-      <p>Join us to explore the art of paper folding!</p>
-      <a href="/events" className="cta-button">See Upcoming Events</a>
-      <a href="https://web.groupme.com/join_group/103678241/lZhF26Dc" className="cta-button">Join our GroupMe</a>
+      <h3> &emsp; Learn the art of paper folding!</h3>
     </section>
   </main>
 );
