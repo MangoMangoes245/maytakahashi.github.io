@@ -79,6 +79,7 @@ header nav ul li a {
   padding-left: 2rem; 
   text-align: left;
   color: white;
+  text-shadow: 2px 2px 5px grey;
 }
 .hero h2 {
   
