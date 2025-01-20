@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Events from "./pages/Events";
 import Contact from "./pages/contactform";
 import Mission from "./pages/Mission";
+import Team from "./pages/Team";
 import "./assets/css/App.css"
 import axios from "axios";
 
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/mission" element={<Mission />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

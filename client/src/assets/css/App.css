@@ -141,6 +141,23 @@ header nav ul li a {
   transform: scale(1.05);
 }
 
+.team h1 {
+  text-align: center;
+  font-family: 'jersey25';
+  text-shadow: 2px 2px 5px grey;
+  font-size: 3.5vw;
+  padding: 0rem;
+}
+
+.team {
+  text-align: center;
+  font-family: 'mochiyPop';
+  font-size: 1vw;
+  color: white;
+  text-shadow: 2px 2px 5px grey;
+}
+
+
 .contact h1 {
   text-align: center;
   font-family: 'jersey25';
