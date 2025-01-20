@@ -141,10 +141,63 @@ header nav ul li a {
   transform: scale(1.05);
 }
 
+.contact h1 {
+  text-align: center;
+  font-family: 'jersey25';
+  color: #ffffff;
+  text-shadow: 2px 2px 5px grey;
+  font-size: 4vw;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.contact h2 {
+  text-align: center;
+  font-family: 'jersey25';
+  color: #ffffff;
+  text-shadow: 2px 2px 5px grey;
+  font-size: 3vw;
+  padding: 0;
+}
+
+.contact-form input{
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+  width: 90%;
+  padding: 0.5rem;
+  border: 3px solid #dac1ce;
+}
+
+.contact-form textarea {
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+  width: 90%;
+  height: 150px;
+  padding: 0.5rem;
+  border: 3px solid #dac1ce;
+  resize: none;
+}
+
+.contact-form button {
+  padding: 0.5rem;
+  margin: auto;
+  margin-top: 1rem;
+  display: block;
+  border: none;
+  background: #ff6565;
+  color: white;
+  cursor: pointer;
+  
+  
+}
+
+
 main h1 {
   text-align: center;
   margin: 2rem 0;
-  font-size: 3rem;
+  font-size: 4vw;
   font-family: jersey25;
   text-shadow: 2px 2px 5px grey;
   color: #ffffff;
