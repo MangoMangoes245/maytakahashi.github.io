@@ -11,16 +11,7 @@ import "./assets/css/App.css"
 import axios from "axios";
 
 const App = () => {
-
-  // const fetchAIP = async () => {
-  //   const response = await axios.get("http://localhost:5173/api");
-  //   console.log(response.data.message);
-  // };
-
-  // useEffect(() => {
-  //   fetchAIP();
-  // }, []);
-
+  
   return (
     <Router>
       <div id="root">
