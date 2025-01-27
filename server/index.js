@@ -1,22 +1,36 @@
 const express = require('express');
 const nodeMailer = require('nodemailer');
 const cors = require('cors');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 const app = express();
 const port = 9000;
 
-const myemail = 'ruorigamiclub@gmail.com'
-const mypassword = 'hzjjtfzcosctjiqy'
+const myemail = process.env.EMAIL;
+const mypassword = process.env.PASSWORD;
+
+if (!myemail || !mypassword) {
+    console.error('Email or password environment variables are not set');
+    process.exit(1);
+}
 
 app.use(cors());
-app.use(express.json({limit: '25mb'}));
-app.use(express.urlencoded({extended: true, limit: '25mb'}));
-app.use((req,res,next) => {
+app.use(express.json({ limit: '25mb' }));
+app.use(express.urlencoded({ extended: true, limit: '25mb' }));
+app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     next();
 });
 
-function sendEmail({ receiver_email, subject, message }) {
+function sendEmail({ receiver_email, subject, message } = {}) {
     return new Promise((resolve, reject) => {
+        if (!receiver_email || !subject || !message) {
+            return reject({ message: 'Missing required fields' });
+        }
+
+        console.log('Creating transporter...');
         var transporter = nodeMailer.createTransport({
             service: 'gmail',
             auth: {
@@ -24,7 +38,7 @@ function sendEmail({ receiver_email, subject, message }) {
                 pass: mypassword
             },
         });
-    
+
         const mailOptions = {
             from: myemail,
             to: myemail,
@@ -33,32 +47,40 @@ function sendEmail({ receiver_email, subject, message }) {
             replyTo: receiver_email,
         };
 
+        console.log('Sending email...');
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
-                console.log(error);
-                return reject({message: 'an error occurred'});
+                console.error('Error sending email:', error);
+                return reject({ message: 'An error occurred', error });
             } else {
-                return resolve ({message: 'email sent'});
+                console.log('Email sent:', info.response);
+                return resolve({ message: 'Email sent' });
             }
         });
     });
 }
 
 app.get("/", (req, res) => {
-    sendEmail()
-        .then((response) => res.send(response.message))
-        .catch((error) => res.status(500).send(error.message));
+    console.log('Received GET request at /');
+    res.send('Welcome to the email service');
 });
 
-
 app.post("/send_email", (req, res) => {
-    const { receiver_email, subject, message } = req.body; 
+    console.log('Received POST request at /send_email');
+    const { receiver_email, subject, message } = req.body;
     if (!receiver_email || !subject || !message) {
+        console.error('Missing fields in POST /send_email');
         return res.status(400).send("All fields are required");
     }
     sendEmail(req.body)
-        .then((response) => res.send(response.message))
-        .catch((error) => res.status(500).send(error.message));
+        .then((response) => {
+            console.log('Email sent successfully');
+            res.send(response.message);
+        })
+        .catch((error) => {
+            console.error('Error in POST /send_email:', error);
+            res.status(500).send(error.message);
+        });
 });
 
 app.listen(port, () => {
