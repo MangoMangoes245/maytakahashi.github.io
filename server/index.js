@@ -64,26 +64,3 @@ app.post("/send_email", (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
-
-// const cors = require('cors');
-// const corsOptions = {
-//     origin: 'http://localhost:5173'
-// };
-
-// app.use(cors(corsOptions));
-
-// const PORT = process.env.PORT || 8080;
-
-// //Middleware
-// app.use(express.static('public'));
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/public/contactform.jsx');
-// });
-// // app.get('/api', (req, res) => {
-// //     res.json({ message: 'Hello, world!' });
-// // });
-
-// app.listen(8080, () => {
-//     console.log('Server is running on port 8080');
-// });
