@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = 9000;
+const port = process.env.PORT || 9000;
 
 const myemail = process.env.EMAIL;
 const mypassword = process.env.PASSWORD;
@@ -16,13 +16,15 @@ if (!myemail || !mypassword) {
     process.exit(1);
 }
 
-app.use(cors());
+// Configure CORS to allow requests from your client application
+app.use(cors({
+    origin: 'https://maytakahashi-github-io-hz1a.vercel.app/', // Replace with your client URL
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
+}));
+
 app.use(express.json({ limit: '25mb' }));
 app.use(express.urlencoded({ extended: true, limit: '25mb' }));
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
 
 function sendEmail({ receiver_email, subject, message } = {}) {
     return new Promise((resolve, reject) => {
