@@ -18,7 +18,7 @@ if (!myemail || !mypassword) {
 
 // Configure CORS to allow requests from your client application
 app.use(cors({
-    origin: 'https://maytakahashi-github-io-hz1a.vercel.app/', // Replace with your client URL
+    origin: 'maytakahashi-github-io-client-d6c956ag0.vercel.app', // Replace with your client URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type']
 }));
