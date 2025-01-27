@@ -13,7 +13,7 @@ const Contact = () => {
       return alert("Please fill in all fields");
     } else {
       try {
-        let result = await axios.post("https://maytakahashi-github-io-hz1a.vercel.app/", { 
+        let result = await axios.post("https://maytakahashi-github-io-hz1a.vercel.app/send_email", { 
           receiver_email: receiver_email,
           subject: subject,
           message: message,
