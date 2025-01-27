@@ -16,9 +16,21 @@ if (!myemail || !mypassword) {
     process.exit(1);
 }
 
-// Configure CORS to allow requests from your client application
+const allowedOrigins = [
+    'https://maytakahashi-github-io-client.vercel.app', // Replace with your client URL
+    'https://maytakahashi-github-io-client.vercel.app/contact'
+    'http://localhost:3000' // Add localhost for development
+];
+
+// Enable CORS for specific origins
 app.use(cors({
-    origin: 'https://maytakahashi-github-io-client-20cc8hk2k.vercel.app/contact', // Replace with your client URL
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type']
 }));
