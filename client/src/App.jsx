@@ -11,7 +11,7 @@ import "./assets/css/App.css"
 import axios from "axios";
 
 const App = () => {
-  
+  var cors = require('cors');
   return (
     <Router>
       <div id="root">
