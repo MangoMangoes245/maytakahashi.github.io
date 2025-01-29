@@ -60,7 +60,7 @@ function sendEmail({ receiver_email, subject, message } = {}) {
     });
 }
 
-app.get("maytakahashi-github-io-proxy-9n07a8dmc.vercel.app", (req, res) => {
+app.get("/", (req, res) => {
     console.log('Received GET request at /');
     res.send('Welcome to the email service');
 });
