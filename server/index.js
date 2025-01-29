@@ -16,26 +16,13 @@ if (!myemail || !mypassword) {
     process.exit(1);
 }
 
-const allowedOrigins = [
-    'https://maytakahashi-github-io-client.vercel.app', // Replace with your client URL
-    'http://localhost:3000' // Add localhost for development
-];
-
-// Enable CORS for specific origins
-app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type']
-}));
-
+app.use(cors());
 app.use(express.json({ limit: '25mb' }));
 app.use(express.urlencoded({ extended: true, limit: '25mb' }));
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 
 function sendEmail({ receiver_email, subject, message } = {}) {
     return new Promise((resolve, reject) => {
@@ -73,12 +60,12 @@ function sendEmail({ receiver_email, subject, message } = {}) {
     });
 }
 
-app.get("/", (req, res) => {
+app.get("maytakahashi-github-io-proxy-9n07a8dmc.vercel.app", (req, res) => {
     console.log('Received GET request at /');
     res.send('Welcome to the email service');
 });
 
-app.post("/send_email", (req, res) => {
+app.post("maytakahashi-github-io-proxy-9n07a8dmc.vercel.app", (req, res) => {
     console.log('Received POST request at /send_email');
     const { receiver_email, subject, message } = req.body;
     if (!receiver_email || !subject || !message) {
