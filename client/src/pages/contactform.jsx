@@ -13,7 +13,7 @@ const Contact = () => {
       return alert("Please fill in all fields");
     } else {
       try {
-        let result = await axios.post("/send_email", { // Use relative path for proxy
+        let result = await axios.post("https://maytakahashi-github-io-server-f2tl0f6s4.vercel.app", { // Use the correct deployed server URL
           receiver_email: receiver_email,
           subject: subject,
           message: message,
