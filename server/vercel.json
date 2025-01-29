@@ -8,8 +8,8 @@
   ],
   "rewrites": [
     {
-      "source": "/send_email/:match*",
-      "destination": "https://maytakahashi-github-io-server-2lhef7esx.vercel.app/send_email/:match*"
+      "source": "/proxy/:match*",
+      "destination": "https://maytakahashi-github-io-server-f2tl0f6s4.vercel.app:match*"
     }
   ]
 }
