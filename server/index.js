@@ -16,13 +16,26 @@ if (!myemail || !mypassword) {
     process.exit(1);
 }
 
-app.use(cors());
+const allowedOrigins = [
+    'https://maytakahashi-github-io-client.vercel.app', // Replace with your client URL
+    'http://localhost:3000' // Add localhost for development
+];
+
+// Enable CORS for specific origins
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
+}));
+
 app.use(express.json({ limit: '25mb' }));
 app.use(express.urlencoded({ extended: true, limit: '25mb' }));
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
 
 function sendEmail({ receiver_email, subject, message } = {}) {
     return new Promise((resolve, reject) => {
