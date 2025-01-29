@@ -65,7 +65,7 @@ app.get("/", (req, res) => {
     res.send('Welcome to the email service');
 });
 
-app.post("https://maytakahashi-github-io-proxy-9n07a8dmc.vercel.app", (req, res) => {
+app.post("https://maytakahashi-github-io-proxy.vercel.app", (req, res) => {
     console.log('Received POST request at /send_email');
     const { receiver_email, subject, message } = req.body;
     if (!receiver_email || !subject || !message) {
